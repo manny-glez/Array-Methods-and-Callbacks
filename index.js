@@ -152,7 +152,18 @@ hint: the strings returned need to exactly match the string in step 4.
  */
 
 function getWinnersByYear(fifaData, getYears, getWinners) {
-    /* code here */
+    
+    const winnersString = []
+
+    const years = getYears(fifaData, getFinals)
+
+    const winners = getWinners(fifaData, getFinals)
+
+    for (let counter = 0; counter < years.length; counter ++) {
+        winnersString.push(`In ${years[counter]}, ${winners[counter]} won the world cup!`)
+    }
+
+    return winnersString
 }
 
 
